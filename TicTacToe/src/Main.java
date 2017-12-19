@@ -55,7 +55,7 @@ class TicTacToe {
 
 
 	public TicTacToe() {
-		isSharpSymbol=true; //zalo¿enie, ¿e zaczynamy od symbolu X
+		isSharpSymbol=true; //assumption that we start with the symbol X
 		turnCounter=0;
 		resultOfMatch=null;
 		numbersOfWins=0;
@@ -127,7 +127,7 @@ class TicTacToe {
 	
 
 	public String checkWhoWon() {
-		if(turnCounter<5) { //nikt nie mia³ szans zd¹¿yæ wygraæ
+		if(turnCounter<5) { //no one has chance to win
 			return null;
 		}
 		else if (
@@ -161,7 +161,7 @@ class TicTacToe {
 				return "\\n\\nNikt nie wygra³";
 			}
 		else {
-			return null; //nikt jeszcze nie wygra³
+			return null; //no one won yet
 		}
 
 	}
@@ -203,13 +203,11 @@ class TicTacToe {
 			int[] computerCoordinates=getCoordinatesByComputer();
 			computerTurn=false;	
 			return computerCoordinates;
-			//move(computerCoordinates[0], computerCoordinates[1]); do usuniecia
 		}
 		else {
 			int[] playerCoordinates=getCoordinatesByPlayer();
 			computerTurn=true;	
 			return playerCoordinates;
-			//move(playerCoordinates[0], playerCoordinates[1]); do usuniecia
 		}
 				
 	}
