@@ -166,11 +166,11 @@ class TicTacToe {
 
 	}
 	
-	public int[] getCoordinatesByPlayer() {  //dodaæ exception i
+	public int[] getCoordinatesByPlayer() {  
 		int[] coordinates = new int[2];
 		boolean isValid=false;
-		Scanner scanner= new Scanner(System.in);
 		while(!isValid) {
+			Scanner scanner= new Scanner(System.in);
 			System.out.println("Enter X,Y coordinates for your move (x,y): ");
 			String xy= scanner.next();
 			int x= Integer.parseInt((xy.charAt(0)+""));
@@ -185,7 +185,6 @@ class TicTacToe {
 			}
 
 		}
-		scanner.close();
 		return coordinates;
 
 	}
@@ -221,7 +220,7 @@ class TicTacToe {
 		printBoard();
 			while(resultOfMatch==null) {
 				boolean moveAllowed = false;
-				while(!moveAllowed) {  //sprawdzam czy mo¿na zrobiæ taki ruch
+				while(!moveAllowed) {  //checking if move is allowed
 					moveAllowed=move(getCoordinates());
 				}
 				resultOfMatch=checkWhoWon();
